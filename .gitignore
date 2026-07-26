@@ -1,0 +1,15 @@
+# Backend
+backend/target/
+backend/data/
+*.class
+*.jar
+
+# Mobile
+mobile/node_modules/
+mobile/.expo/
+mobile/demo/
+
+# General
+.DS_Store
+*.env
+.env.local

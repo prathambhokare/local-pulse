@@ -1,0 +1,48 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: LocalPulse
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 6MB
+  datasource:
+    url: jdbc:h2:file:./data/localpulse;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ""
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      settings:
+        web-allow-others: true
+
+logging:
+  level:
+    com.localpulse: DEBUG
+
+app:
+  jwt:
+    # Dev-only default secret. Override with env var APP_JWT_SECRET in real deployments.
+    secret: ${APP_JWT_SECRET:local-pulse-dev-secret-key-change-me-please-32bytes-min}
+    expiration-minutes: 43200 # 30 days - sellers stay logged in on their phone
+  otp:
+    default-country-code: "${OTP_DEFAULT_COUNTRY_CODE:+91}"
+    expiry-minutes: 5
+    expose-in-response: ${OTP_EXPOSE_IN_RESPONSE:true}
+    max-attempts: 5
+  listing:
+    default-expiry-hours: 24
+    max-expiry-hours: 24
+  cors:
+    allowed-origins: "*"

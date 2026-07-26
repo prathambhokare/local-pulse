@@ -38,6 +38,9 @@ jobs:
           # to point at your deployed backend, e.g. https://your-backend.railway.app
           EXPO_PUBLIC_API_URL: ${{ vars.EXPO_PUBLIC_API_URL }}
 
+      - name: Copy public assets (CNAME etc.) into dist
+        run: cp -r mobile/public/. mobile/dist/
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 

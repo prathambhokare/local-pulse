@@ -1,0 +1,53 @@
+{
+  "expo": {
+    "name": "LocalPulse",
+    "slug": "mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#F7F9F8"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "LocalPulse uses your location to show sellers and availability near you.",
+        "NSPhotoLibraryUsageDescription": "LocalPulse lets sellers choose a photo for their availability listing."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#0B5B3A",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "LocalPulse uses your location to show sellers and availability near you."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "LocalPulse lets sellers choose a photo for their availability listing.",
+          "cameraPermission": false
+        }
+      ],
+      "expo-font"
+    ]
+  }
+}

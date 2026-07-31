@@ -91,3 +91,7 @@ mobile/src/
 - H2 is great for local development; swap to Postgres/MySQL for production scale.
 - Geo search uses in-app Haversine distance (fine at local/regional scale); a real
   geospatial index (e.g. Postgres + PostGIS) would be worth it at larger scale.
+  
+## Architechture Diagram
+  <img width="1024" height="644" alt="image" src="https://github.com/user-attachments/assets/7a83e79e-dba5-4d46-a373-1299ee3ef6c7" />
+
